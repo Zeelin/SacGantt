@@ -1,48 +1,5 @@
 (function () {
-    let tmpl = document.createElement('template');
-    tmpl.innerHTML = `
-        <style>
-            .api-calls {
-                display: flex;
-                flex-direction: column;
-                width: 200px;
-                background-color: #f0f0f0;
-                border-radius: 4px;
-                padding: 10px;
-            }
-
-            .buttons {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-gap: 5px;
-            }
-
-            .buttons > button {
-                height: 30px;
-                border: none;
-                color: #fff;
-                border-radius: 4px;
-            }
-
-            .buttons > button:active {
-                transform: scale(0.95);
-            }
-
-            .buttons > button {
-                background-color: #5F6A9D;
-            }
-        </style>
-        <div class="api-calls">
-            <div class="buttons">
-                <button id="getAccessToken">Get Access Token</button>
-                <button id="getCsrfToken">Get CSRF Token</button>
-                <button id="createJob">Create Job</button>
-                <button id="uploadData">Upload Data</button>
-                <button id="validateJob">Validate Job</button>
-                <button id="runJob">Run Job</button>
-            </div>
-        </div>
-    `;
+   
 
     let accessToken, csrfToken, jobUrl, validateJobURL, runJobURL;
 
@@ -81,7 +38,9 @@ public.Actual,202401,1,1000`;
         })
         .catch(error => console.error('Error:', error));
     }
-
+    
+    window.getAccessToken = getAccessToken;
+    
     function getCsrfToken() {
         if (!accessToken) {
             console.log('Access token is not set');
@@ -102,7 +61,9 @@ public.Actual,202401,1,1000`;
         })
         .catch(error => console.error('Error:', error));
     }
-
+    
+    window.getCsrfToken = getCsrfToken;
+    
     function createJob() {
         if (!accessToken || !csrfToken) {
             console.log('Access token or CSRF token is not set');
@@ -128,7 +89,7 @@ public.Actual,202401,1,1000`;
         })
         .catch(error => console.error('Error:', error));
     }
-
+window.createJob = createJob;
     function uploadData() {
       console.log('uploadData is triggered');
         if (!accessToken || !csrfToken || !jobUrl) {
@@ -162,7 +123,8 @@ public.Actual,202401,1,1000`;
         })
         .catch(error => console.error('Error:', error));
     }
-
+window.uploadData = uploadData;
+    
     function validateJob() {
         if (!accessToken || !csrfToken || !validateJobURL) {
             console.log('Access token, CSRF token, or validate job URL is not set');
@@ -203,7 +165,7 @@ public.Actual,202401,1,1000`;
     })
     .catch(error => console.error('Error:', error));
     }
-
+ window.validateJob = validateJob;
     function runJob() {
         if (!accessToken || !csrfToken || !runJobURL) {
             console.log('Access token, CSRF token, or run job URL is not set');
@@ -241,7 +203,8 @@ public.Actual,202401,1,1000`;
     })
     .catch(error => console.error('Error:', error));
     }
-
+  window.runJob = runJob;
+    
     class SACAPICalls extends HTMLElement {
         constructor() {
             super();
@@ -257,5 +220,5 @@ public.Actual,202401,1,1000`;
         }
     }
 
-    customElements.define('sac-api-calls', SACAPICalls);
+
 })();
