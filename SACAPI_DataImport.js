@@ -205,20 +205,7 @@ window.uploadData = uploadData;
     }
   window.runJob = runJob;
     
-    class SACAPICalls extends HTMLElement {
-        constructor() {
-            super();
-            this._shadowRoot = this.attachShadow({mode: 'open'});
-            this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
-            this._shadowRoot.getElementById('getAccessToken').addEventListener('click', getAccessToken);
-            this._shadowRoot.getElementById('getCsrfToken').addEventListener('click', getCsrfToken);
-            this._shadowRoot.getElementById('createJob').addEventListener('click', createJob);
-            this._shadowRoot.getElementById('uploadData').addEventListener('click', uploadData);
-            this._shadowRoot.getElementById('validateJob').addEventListener('click', validateJob);
-            this._shadowRoot.getElementById('runJob').addEventListener('click', runJob);
-        }
-    }
 
 
 })();
