@@ -1,7 +1,7 @@
 {
-    "name": "GanttChartWidget",
-    "description": "Gantt Chart Widget",
-    "newInstancePrefix": "GanttChartWidget",
+    "name": "GanttChartWidgetAPI",
+    "description": "Gantt Chart Widget with API",
+    "newInstancePrefix": "GanttChartWidgetAPI",
     "eula": "",
     "license": "Open Source",
     "id": "GanttChartWidget",
