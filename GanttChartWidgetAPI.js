@@ -83,6 +83,8 @@
         console.log('CSV string:', csvString);
   const csvData_raw = 'Version,Date,id,label,startDate,endDate,open,progress\n' + csvString;
         // Return the CSV string
+           console.log('Data_raw:', csvData_raw);
+    
         return csvData_raw;
     }
 
