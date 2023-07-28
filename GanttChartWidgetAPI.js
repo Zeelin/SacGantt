@@ -55,9 +55,6 @@
 // Load SACAPI_DataImport.js
         const script = document.createElement('script');
         script.src = 'https://planifyit.github.io/Gantt_Chart_SAC_API/SACAPI_DataImport.js';
-        script.onload = () => {
-       
-        };
         document.head.appendChild(script);
             
         }
