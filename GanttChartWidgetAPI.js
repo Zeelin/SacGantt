@@ -181,15 +181,17 @@ _renderChart() {
         // Initialize the Gantt chart
         gantt.init(chartElement);
 
-     gantt.attachEvent("onAfterTaskAdd", (id, task) => {
-            console.log("New task was added: ", task);
-            // Convert the task to CSV
-            const csvData = this.taskToCsv(task);
-            console.log("csvData in listener",csvData);
-          
-          window.getAccessToken().then(window.getCsrfToken);
-          window.createJob().then(() => window.uploadData(csvData));
+gantt.attachEvent("onAfterTaskAdd", (id, task) => {
+    console.log("New task was added: ", task);
+    // Convert the task to CSV
+    const csvData = this.taskToCsv(task);
+    // Retrieve the tokens and then call createJob and uploadData
+    window.getAccessToken().then(() => {
+        window.getCsrfToken().then(() => {
+            window.createJob().then(() => window.uploadData(csvData));
         });
+    });
+});
 
         // Load the tasks into the Gantt chart
         gantt.parse({ data: this.tasks });
