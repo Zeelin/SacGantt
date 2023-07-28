@@ -8,20 +8,25 @@
     const clientSecret = '7f7889df-1504-49f2-9e38-e2de480d85a2$NDPTA7KjiS3YdGl0wDjwukEKlYmwknVyVQyauFxanAE=';
     const tokenUrl = 'https://sac-d-bit.authentication.eu10.hana.ondemand.com/oauth/token';
     const apiEndpoint = 'https://sac-d-bit.eu10.hcs.cloud.sap/api/v1/dataimport/models/Cdlg2a1kkbj139ea3kjvk86s05k';
-    const jobSettings = {
-        "importType": "factData",
+ const jobSettings = {
+        "importType": "masterFactData",
         "Mapping": {  
-            "Version": "Version", 
-            "Date": "Date",
-            "id": "id",
+     "Version": "Version",
+         "Date": "Date",
+           "id": "id",
+          "label": "label",
+            "startDate": "startDate",
+           "endDate": "endDate",
+            "open": "open",
             "progress": "progress"
         },
         "JobSettings": {
             "importMethod": "Append"
         }
     };
-    const csvData = `Version,Date,id,progress
-public.Actual,202401,1,1000`;
+  const csvData = `Version,Date,id,label,startDate,endDate,open,progress
+public.Actual,202401,1,Task1,2023-05-05,2023-02-02,X,1000`;
+
 
     function getAccessToken() {
         return fetch(tokenUrl, {
