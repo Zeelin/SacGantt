@@ -192,7 +192,13 @@ gantt.attachEvent("onAfterTaskAdd", (id, task) => {
             window.createJob().then(() => {
                 window.uploadData(csvData).then(() => {
                     // After the task data is uploaded, refresh the Gantt chart data
-                    this._updateData(this._props.myDataBinding);
+                    this._updateData(this._props.myDataBinding).then(() => {
+                        // Clear the existing data
+                        gantt.clearAll();
+
+                        // Load the new data
+                        gantt.parse({ data: this.tasks });
+                    });
                 });
             });
         });
