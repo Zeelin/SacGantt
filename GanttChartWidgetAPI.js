@@ -185,10 +185,16 @@ gantt.attachEvent("onAfterTaskAdd", (id, task) => {
     console.log("New task was added: ", task);
     // Convert the task to CSV
     const csvData = this.taskToCsv(task);
-    // Retrieve the tokens and then call createJob and uploadData
+    // Retrieve the tokens and then call createJob, uploadData, validateJob, and runJob
     window.getAccessToken().then(() => {
         window.getCsrfToken().then(() => {
-            window.createJob().then(() => window.uploadData(csvData));
+            window.createJob().then(() => {
+                window.uploadData(csvData).then(() => {
+                    window.validateJob().then(() => {
+                        window.runJob();
+                    });
+                });
+            });
         });
     });
 });
