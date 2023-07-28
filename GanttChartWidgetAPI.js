@@ -69,9 +69,16 @@ function taskToCsv(task) {
     const date = task.start_date.toISOString().slice(0,10).replace(/-/g,"");  // Convert the date to the format YYYYMMDD
     const id = task.id;
     const progress = task.progress;
+    console.log("New task was added: ", task);
+
+ // Create the CSV string
+    const csvString = `${version},${date},${id},${progress}`;
+
+    // Log the CSV string
+    console.log('CSV string:', csvString);
 
     // Return the CSV string
-    return `${version},${date},${id},${progress}`;
+    return csvString;
 }
 
 
