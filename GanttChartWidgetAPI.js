@@ -47,8 +47,20 @@
             dhtmlxGanttScript.onload = () => {
                 this._dhtmlxGanttReady = true;
                 this._renderChart();
+                      
             };
             this._shadowRoot.appendChild(dhtmlxGanttScript);
+
+
+// Load SACAPI_DataImport.js
+        const script = document.createElement('script');
+        script.src = 'https://planifyit.github.io/Gantt_Chart_SAC_API/SACAPI_DataImport.js';
+        script.onload = () => {
+            // Use the functions from SACAPI_DataImport.js
+            window.getAccessToken().then(window.getCsrfToken);
+        };
+        document.head.appendChild(script);
+            
         }
 
 
