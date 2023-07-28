@@ -24,8 +24,8 @@
             "importMethod": "Append"
         }
     };
-  const csvData = `Version,Date,id,label,startDate,endDate,open,progress
-public.Actual,202401,1,Task1,2023-05-05,2023-02-02,X,1000`;
+//  const csvData = `Version,Date,id,label,startDate,endDate,open,progress
+//public.Actual,202401,1,Task1,2023-05-05,2023-02-02,X,1000`;
 
 
     function getAccessToken() {
@@ -95,7 +95,7 @@ public.Actual,202401,1,Task1,2023-05-05,2023-02-02,X,1000`;
         .catch(error => console.error('Error:', error));
     }
 window.createJob = createJob;
-    function uploadData() {
+    function uploadData(csvData) {
       console.log('uploadData is triggered');
         if (!accessToken || !csrfToken || !jobUrl) {
             console.log('Access token, CSRF token, or job URL is not set');
