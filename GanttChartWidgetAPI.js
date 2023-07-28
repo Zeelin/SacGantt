@@ -66,12 +66,12 @@
     taskToCsv(task) {
         // Convert the task data to the CSV format
         const version = 'public.Actual';  
-        const date = task.start_date.toISOString().slice(0,10).replace(/-/g,"");  // Convert the date to the format YYYYMMDD
+        const date =  '202401'; 
         const id = task.id;
-        const label = task.label;
-        const startDate = task.startDate;
-        const endDate = task.endDate;
-        const open = task.open;
+        const label = task.text;
+        const startDate = task.start_date.toISOString().slice(0,10).replace(/-/g,"");  // Convert the date to the format YYYYMMDD
+        const endDate = task.end_date.toISOString().slice(0,10).replace(/-/g,"");  // Convert the date to the format YYYYMMDD
+        const open = task.$open;
         const progress = task.progress;
      
         console.log("New task was added: ", task);
