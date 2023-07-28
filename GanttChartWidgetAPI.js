@@ -63,7 +63,7 @@
             
         }
 
-function taskToCsv(task) {
+taskToCsv(task) {
     // Convert the task data to the CSV format
     const version = 'public.Actual';  // This seems to be a fixed value
     const date = task.start_date.toISOString().slice(0,10).replace(/-/g,"");  // Convert the date to the format YYYYMMDD
