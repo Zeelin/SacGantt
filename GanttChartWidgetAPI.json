@@ -12,7 +12,7 @@
     "webcomponents": [
         {
             "kind": "main",
-            "tag": "gantt-chart-widget-API",
+            "tag": "gantt-chart-widget-api",
             "url": "https://planifyit.github.io/Gantt_Chart_SAC_API/GanttChartWidgetAPI.js",
             "integrity": "",
             "ignoreIntegrity": true
