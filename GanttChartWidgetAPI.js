@@ -165,5 +165,5 @@ _renderChart() {
 
     }
 
-    customElements.define('gantt-chart-widget-API', GanttChartWidgetAPI);
+    customElements.define('gantt-chart-widget-api', GanttChartWidgetAPI);
 })();
