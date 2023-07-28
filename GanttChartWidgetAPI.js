@@ -26,6 +26,7 @@
     <a href="https://www.linkedin.com/company/planifyit" target="_blank" class="follow-link">Follow us on Linkedin - Planifyit</a>
     `;
 
+    
     class GanttChartWidgetAPI extends HTMLElement {
         constructor() {
             super();
