@@ -69,19 +69,20 @@
         const date =  '202401'; 
         const id = task.id;
         const label = task.text;
-        const startDate = task.start_date.toISOString().slice(0,10).replace(/-/g,"");  // Convert the date to the format YYYYMMDD
-        const endDate = task.end_date.toISOString().slice(0,10).replace(/-/g,"");  // Convert the date to the format YYYYMMDD
-        const open = task.$open;
+        const startDate = task.start_date.toISOString().slice(0,10);  // Convert the date to the format YYYYMMDD
+        const endDate = task.end_date.toISOString().slice(0,10);  // Convert the date to the format YYYYMMDD
+        const open = 'X';
         const progress = task.progress;
      
         console.log("New task was added: ", task);
-
+  
         // Create the CSV string
         const csvString = `${version},${date},${id},${label},${startDate},${endDate},${open},${progress}`;
 
         // Log the CSV string
         console.log('CSV string:', csvString);
   const csvData_raw = 'Version,Date,id,label,startDate,endDate,open,progress\n' + csvString;
+
         // Return the CSV string
            console.log('Data_raw:', csvData_raw);
     
