@@ -181,7 +181,7 @@ _renderChart() {
 gantt.attachEvent("onAfterTaskAdd", function(id, task){
     console.log("New task was added: ", task);
     // Convert the task to CSV
-    const csvData = taskToCsv(task);
+    const csvData = this.taskToCsv(task);
     // Here you can call your function to upload the task to SAC
 });
 
