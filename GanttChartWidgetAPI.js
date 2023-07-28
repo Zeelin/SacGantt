@@ -162,6 +162,10 @@ _renderChart() {
         // Initialize the Gantt chart
         gantt.init(chartElement);
 
+      gantt.attachEvent("onAfterTaskAdd", function(id, task){
+    console.log("New task was added: ", task);
+
+});
 
         // Load the tasks into the Gantt chart
         gantt.parse({ data: this.tasks });
