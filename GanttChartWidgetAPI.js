@@ -34,7 +34,7 @@
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._props = {};
             this.tasks = [];
-
+            this.taskToCsv = this.taskToCsv.bind(this);
             // Load DHTMLX Gantt CSS
             const dhtmlxGanttCSS = document.createElement('link');
             dhtmlxGanttCSS.rel = 'stylesheet';
@@ -178,7 +178,7 @@ _renderChart() {
         // Initialize the Gantt chart
         gantt.init(chartElement);
 
-gantt.attachEvent("onAfterTaskAdd", function(id, task){
+gantt.attachEvent("onAfterTaskAdd", (id, task){
     console.log("New task was added: ", task);
     // Convert the task to CSV
     const csvData = this.taskToCsv(task);
