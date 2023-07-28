@@ -65,20 +65,25 @@
 
     taskToCsv(task) {
         // Convert the task data to the CSV format
-        const version = 'public.Actual';  // This seems to be a fixed value
+        const version = 'public.Actual';  
         const date = task.start_date.toISOString().slice(0,10).replace(/-/g,"");  // Convert the date to the format YYYYMMDD
         const id = task.id;
+        const label = task.label;
+        const startDate = task.startDate;
+        const endDate = task.endDate;
+        const open = task.open;
         const progress = task.progress;
+     
         console.log("New task was added: ", task);
 
         // Create the CSV string
-        const csvString = `${version},${date},${id},${progress}`;
+        const csvString = `${version},${date},${id},${label},${startDate},${endDate},${open},${progress}`;
 
         // Log the CSV string
         console.log('CSV string:', csvString);
-
+  const csvData = 'Version,Date,id,label,startDate,endDate,open,progress' + csvString;
         // Return the CSV string
-        return csvString;
+        return csvData;
     }
 
 
@@ -181,7 +186,7 @@ _renderChart() {
             console.log("New task was added: ", task);
             // Convert the task to CSV
             const csvData = this.taskToCsv(task);
-            // Here you can call your function to upload the task to SAC
+            console.log("csvData",csvData);
         });
 
         // Load the tasks into the Gantt chart
