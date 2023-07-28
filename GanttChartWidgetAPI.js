@@ -62,7 +62,7 @@
     taskToCsv(task) {
         // Convert the task data to the CSV format
         const version = 'public.Actual';  
-        const date =  '#'; 
+        const date =  '000000'; 
         const id = task.id;
         const label = task.text;
         const startDate = task.start_date.toISOString().slice(0,10);  // Convert the date to the format YYYYMMDD
