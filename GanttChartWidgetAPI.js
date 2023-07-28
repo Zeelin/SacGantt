@@ -56,8 +56,7 @@
         const script = document.createElement('script');
         script.src = 'https://planifyit.github.io/Gantt_Chart_SAC_API/SACAPI_DataImport.js';
         script.onload = () => {
-            // Use the functions from SACAPI_DataImport.js
-            window.getAccessToken().then(window.getCsrfToken);
+       
         };
         document.head.appendChild(script);
             
@@ -189,7 +188,10 @@ _renderChart() {
             console.log("New task was added: ", task);
             // Convert the task to CSV
             const csvData = this.taskToCsv(task);
-            console.log("csvData",csvData);
+            console.log("csvData in listener",csvData);
+          
+          window.getAccessToken().then(window.getCsrfToken);
+          window.createJob().then(() => window.uploadData(csvData));
         });
 
         // Load the tasks into the Gantt chart
