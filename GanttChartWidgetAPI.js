@@ -81,9 +81,9 @@
 
         // Log the CSV string
         console.log('CSV string:', csvString);
-  const csvData = 'Version,Date,id,label,startDate,endDate,open,progress' + csvString;
+  const csvData_raw = 'Version,Date,id,label,startDate,endDate,open,progress' + csvString;
         // Return the CSV string
-        return csvData;
+        return csvData_raw;
     }
 
 
