@@ -91,12 +91,13 @@ input:checked + .slider:before {
  <div>    <a href="https://www.linkedin.com/company/planifyit" target="_blank" class="follow-link">Follow us on Linkedin - Planifyit</a>
 </div>
 
-  <div>
+
+<div style="display: flex; align-items: center;">
   <label class="switch">
     <input type="checkbox" id="debugToggle">
     <span class="slider round"></span>
   </label>
-  <p id="debugStatus">Debugging Mode Inactive</p>
+  <p id="debugStatus" style="margin-left: 10px;">Debugging Mode Inactive</p>
 </div>
 
 <div id="debugging-area" style="display: none;">
