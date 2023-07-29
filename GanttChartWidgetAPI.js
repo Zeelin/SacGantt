@@ -125,10 +125,10 @@ input:checked + .slider:before {
 
  
 // Add event listener for the toggle button
-  this._shadowRoot.getElementById('debugToggle').addEventListener('change', function() {
+this._shadowRoot.getElementById('debugToggle').addEventListener('change', () => {
   const debuggingArea = this._shadowRoot.getElementById('debugging-area');
   const debugStatus = this._shadowRoot.getElementById('debugStatus');
-  if (this.checked) {
+  if (this._shadowRoot.getElementById('debugToggle').checked) {
     debugStatus.textContent = 'Debugging Mode Active';
     debuggingArea.style.display = 'block';
   } else {
