@@ -24,6 +24,18 @@
     </style>
      <div id="image-container"> <svg width="750" height="100">  </svg></div> 
     <div id="chart"></div>
+    <button id="toggleDebugging">Toggle Debugging Mode</button>
+<div id="debugging-area" style="display: none;">
+    <h2>Debugging Mode</h2>
+    <button id="getAccessToken">Get Access Token</button>
+    <button id="getCsrfToken">Get CSRF Token</button>
+    <button id="createJob">Create Job</button>
+    <button id="uploadData">Upload Data</button>
+    <button id="validateJob">Validate Job</button>
+    <button id="runJob">Run Job</button>
+    <h3>Messages</h3>
+    <div id="messages"></div>
+</div>
     <a href="https://www.linkedin.com/company/planifyit" target="_blank" class="follow-link">Follow us on Linkedin - Planifyit</a>
     `;
 
@@ -37,6 +49,26 @@
             this._props = {};
             this.tasks = [];
             this.taskToCsv = this.taskToCsv.bind(this);
+
+
+// Add event listener for the toggle button
+    this._shadowRoot.getElementById('toggleDebugging').addEventListener('click', () => {
+        const debuggingArea = this._shadowRoot.getElementById('debugging-area');
+        if (debuggingArea.style.display === 'none') {
+            debuggingArea.style.display = 'block';
+        } else {
+            debuggingArea.style.display = 'none';
+        }
+    });
+
+    // Add event listeners for the debugging buttons
+    this._shadowRoot.getElementById('getAccessToken').addEventListener('click', window.getAccessToken);
+    this._shadowRoot.getElementById('getCsrfToken').addEventListener('click', window.getCsrfToken);
+    this._shadowRoot.getElementById('createJob').addEventListener('click', window.createJob);
+    this._shadowRoot.getElementById('uploadData').addEventListener('click', window.uploadData);
+    this._shadowRoot.getElementById('validateJob').addEventListener('click', window.validateJob);
+    this._shadowRoot.getElementById('runJob').addEventListener('click', window.runJob);
+            
             // Load DHTMLX Gantt CSS
             const dhtmlxGanttCSS = document.createElement('link');
             dhtmlxGanttCSS.rel = 'stylesheet';
