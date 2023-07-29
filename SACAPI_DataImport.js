@@ -10,19 +10,18 @@
     const apiEndpoint = 'https://sac-d-bit.eu10.hcs.cloud.sap/api/v1/dataimport/models/Cdlg2a1kkbj139ea3kjvk86s05k/masterFactData';
 
  const jobSettings = {
-        "importType": "masterFactData",
         "Mapping": {  
-     "Version": "Version",
-         "Date": "Date",
-           "id": "id",
-          "label": "label",
-            "startDate": "startDate",
-           "endDate": "endDate",
-            "open": "open",
+     "Version___ID": "Version",
+     "Date___CALMONTH": "Date",
+     "id___ID": "id",
+          "label___ID": "label",
+            "startDate___ID": "startDate",
+           "endDate___ID": "endDate",
+            "open___ID": "open",
             "progress": "progress"
         },
         "JobSettings": {
-            "importMethod": "Append"
+            "importMethod": "Update"
         }
     };
 //  const csvData = `Version,Date,id,label,startDate,endDate,open,progress
