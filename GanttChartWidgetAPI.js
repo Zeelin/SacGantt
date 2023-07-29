@@ -144,13 +144,13 @@ this._shadowRoot.getElementById('debugToggle').addEventListener('change', () => 
 
 
     // Add event listeners for the debugging buttons
-    this._shadowRoot.getElementById('getAccessToken').addEventListener('click', window.getAccessToken);
-    this._shadowRoot.getElementById('getCsrfToken').addEventListener('click', window.getCsrfToken);
-    this._shadowRoot.getElementById('createJob').addEventListener('click', window.createJob);
-    this._shadowRoot.getElementById('uploadData').addEventListener('click', window.uploadData);
-    this._shadowRoot.getElementById('validateJob').addEventListener('click', window.validateJob);
-    this._shadowRoot.getElementById('runJob').addEventListener('click', window.runJob);
-            
+this._shadowRoot.getElementById('getAccessToken').addEventListener('click', () => window.getAccessToken());
+this._shadowRoot.getElementById('getCsrfToken').addEventListener('click', () => window.getCsrfToken());
+this._shadowRoot.getElementById('createJob').addEventListener('click', () => window.createJob());
+this._shadowRoot.getElementById('uploadData').addEventListener('click', () => window.uploadData());
+this._shadowRoot.getElementById('validateJob').addEventListener('click', () => window.validateJob());
+this._shadowRoot.getElementById('runJob').addEventListener('click', () => window.runJob());
+
             // Load DHTMLX Gantt CSS
             const dhtmlxGanttCSS = document.createElement('link');
             dhtmlxGanttCSS.rel = 'stylesheet';
