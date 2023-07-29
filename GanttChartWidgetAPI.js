@@ -2,6 +2,66 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
     <style>
+    .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ca2222;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2ab934;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 #chart {
     border: 1px solid #000;
     padding: 10px;
@@ -21,12 +81,23 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+
+        
     </style>
+
+
      <div id="image-container"> <svg width="750" height="100">  </svg></div> 
     <div id="chart"></div>
      <a href="https://www.linkedin.com/company/planifyit" target="_blank" class="follow-link">Follow us on Linkedin - Planifyit</a>
 
-    <button id="toggleDebugging">Toggle Debugging Mode</button>
+
+    <label class="switch">
+  <input type="checkbox" id="debugToggle">
+  <span class="slider round"></span>
+</label>
+<p id="debugStatus">Debugging Mode Inactive</p>
+
+    
 <div id="debugging-area" style="display: none;">
     <h2>Debugging Mode</h2>
     <button id="getAccessToken">Get Access Token</button>
@@ -52,15 +123,20 @@
             this.taskToCsv = this.taskToCsv.bind(this);
 
 
+ 
 // Add event listener for the toggle button
-    this._shadowRoot.getElementById('toggleDebugging').addEventListener('click', () => {
-        const debuggingArea = this._shadowRoot.getElementById('debugging-area');
-        if (debuggingArea.style.display === 'none') {
-            debuggingArea.style.display = 'block';
-        } else {
-            debuggingArea.style.display = 'none';
-        }
-    });
+  this._shadowRoot.getElementById('debugToggle').addEventListener('change', function() {
+  const debuggingArea = this._shadowRoot.getElementById('debugging-area');
+  const debugStatus = this._shadowRoot.getElementById('debugStatus');
+  if (this.checked) {
+    debugStatus.textContent = 'Debugging Mode Active';
+    debuggingArea.style.display = 'block';
+  } else {
+    debugStatus.textContent = 'Debugging Mode Inactive';
+    debuggingArea.style.display = 'none';
+  }
+});
+
 
     // Add event listeners for the debugging buttons
     this._shadowRoot.getElementById('getAccessToken').addEventListener('click', window.getAccessToken);
