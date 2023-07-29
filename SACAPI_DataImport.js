@@ -28,7 +28,7 @@
 //public.Actual,202401,1,Task1,2023-05-05,2023-02-02,X,1000`;
 
 
-    function getAccessToken() {
+    function getAccessToken(messagesElement) {
         return fetch(tokenUrl, {
             method: 'POST',
             headers: {
@@ -48,7 +48,7 @@
     
     window.getAccessToken = getAccessToken;
     
-    function getCsrfToken() {
+    function getCsrfToken(messagesElement) {
         if (!accessToken) {
             console.log('Access token is not set');
             return;
@@ -73,7 +73,7 @@
     
     window.getCsrfToken = getCsrfToken;
     
-    function createJob() {
+    function createJob(messagesElement) {
         if (!accessToken || !csrfToken) {
             console.log('Access token or CSRF token is not set');
             return;
@@ -139,7 +139,7 @@ window.createJob = createJob;
     }
 window.uploadData = uploadData;
     
-    function validateJob() {
+    function validateJob(messagesElement) {
         if (!accessToken || !csrfToken || !validateJobURL) {
             console.log('Access token, CSRF token, or validate job URL is not set');
             return;
@@ -182,7 +182,7 @@ window.uploadData = uploadData;
     .catch(error => console.error('Error:', error));
     }
  window.validateJob = validateJob;
-    function runJob() {
+    function runJob(messagesElement) {
         if (!accessToken || !csrfToken || !runJobURL) {
             console.log('Access token, CSRF token, or run job URL is not set');
             return;
