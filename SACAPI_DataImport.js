@@ -40,6 +40,7 @@
         .then(data => {
             accessToken = data.access_token;
             console.log('Access token:', accessToken);
+            messagesElement.textContent = '';  // Clear the messages
             messagesElement.textContent += 'Access token: ' + accessToken + '\n';
             })
            
@@ -65,6 +66,7 @@
         .then(response => {
             csrfToken = response.headers.get('x-csrf-token');
             console.log('CSRF token:', csrfToken);
+           messagesElement.textContent = '';  // Clear the messages
           messagesElement.textContent += 'CSRF token: ' + csrfToken + '\n';
 
         })
@@ -95,6 +97,7 @@
         .then(data => {
             jobUrl = data.jobURL;
             console.log('Job URL:', jobUrl);
+           messagesElement.textContent = '';  // Clear the messages
            messagesElement.textContent += 'Job URL: ' + jobUrl + '\n';
 
         })
@@ -131,6 +134,7 @@ window.createJob = createJob;
             runJobURL = data.runJobURL;
             console.log('Validate job URL:', validateJobURL);
             console.log('Run job URL:', runJobURL);
+           messagesElement.textContent = '';  // Clear the messages
             messagesElement.textContent += 'Validate job URL: ' + validateJobURL + '\n';
       messagesElement.textContent += 'Run job URL: ' + runJobURL + '\n';
  
@@ -160,6 +164,7 @@ window.uploadData = uploadData;
         if (data.failedNumberRows > 0) {
             invalidRowsURL = data.invalidRowsURL;
             console.log('Invalid rows URL:', invalidRowsURL);
+           messagesElement.textContent = '';  // Clear the messages
            messagesElement.textContent += 'Invalid rows URL: ' + invalidRowsURL + '\n';
   
             // Fetch the invalid rows
@@ -202,6 +207,7 @@ window.uploadData = uploadData;
         console.log('Job run response:', data);
         jobStatusURL = data.jobStatusURL;
         console.log('Job status URL:', jobStatusURL);
+       messagesElement.textContent = '';  // Clear the messages
         messagesElement.textContent += 'Invalid rows URL: ' + invalidRowsURL + '\n';
   
         // Fetch the job status
