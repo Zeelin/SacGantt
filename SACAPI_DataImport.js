@@ -40,7 +40,7 @@
         .then(data => {
             accessToken = data.access_token;
             console.log('Access token:', accessToken);
-           document.getElementById('messages').textContent += 'Access token: ' + accessToken + '\n';
+            messagesElement.textContent += 'Access token: ' + accessToken + '\n';
             })
            
         .catch(error => console.error('Error:', error));
@@ -65,7 +65,7 @@
         .then(response => {
             csrfToken = response.headers.get('x-csrf-token');
             console.log('CSRF token:', csrfToken);
-           document.getElementById('messages').textContent += 'CSRF token: ' + csrfToken + '\n';
+          messagesElement.textContent += 'CSRF token: ' + csrfToken + '\n';
 
         })
         .catch(error => console.error('Error:', error));
@@ -95,7 +95,7 @@
         .then(data => {
             jobUrl = data.jobURL;
             console.log('Job URL:', jobUrl);
-           document.getElementById('messages').textContent += 'Job URL: ' + jobUrl + '\n';
+           messagesElement.textContent += 'Job URL: ' + jobUrl + '\n';
 
         })
         .catch(error => console.error('Error:', error));
@@ -131,8 +131,8 @@ window.createJob = createJob;
             runJobURL = data.runJobURL;
             console.log('Validate job URL:', validateJobURL);
             console.log('Run job URL:', runJobURL);
-            document.getElementById('messages').textContent += 'Validate job URL: ' + validateJobURL + '\n';
-        document.getElementById('messages').textContent += 'Run job URL: ' + runJobURL + '\n';
+            messagesElement.textContent += 'Validate job URL: ' + validateJobURL + '\n';
+      messagesElement.textContent += 'Run job URL: ' + runJobURL + '\n';
  
         })
         .catch(error => console.error('Error:', error));
@@ -160,7 +160,7 @@ window.uploadData = uploadData;
         if (data.failedNumberRows > 0) {
             invalidRowsURL = data.invalidRowsURL;
             console.log('Invalid rows URL:', invalidRowsURL);
-            document.getElementById('messages').textContent += 'Invalid rows URL: ' + invalidRowsURL + '\n';
+           messagesElement.textContent += 'Invalid rows URL: ' + invalidRowsURL + '\n';
   
             // Fetch the invalid rows
             return fetch(invalidRowsURL, {
@@ -202,7 +202,7 @@ window.uploadData = uploadData;
         console.log('Job run response:', data);
         jobStatusURL = data.jobStatusURL;
         console.log('Job status URL:', jobStatusURL);
-        document.getElementById('messages').textContent += 'Invalid rows URL: ' + invalidRowsURL + '\n';
+        messagesElement.textContent += 'Invalid rows URL: ' + invalidRowsURL + '\n';
   
         // Fetch the job status
         return fetch(jobStatusURL, {
