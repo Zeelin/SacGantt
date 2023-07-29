@@ -150,7 +150,7 @@ const messagesElement = this._shadowRoot.getElementById('messages');
 this._shadowRoot.getElementById('getAccessToken').addEventListener('click', () => window.getAccessToken(messagesElement));
 this._shadowRoot.getElementById('getCsrfToken').addEventListener('click', () => window.getCsrfToken(messagesElement));
 this._shadowRoot.getElementById('createJob').addEventListener('click', () => window.createJob(messagesElement));
-this._shadowRoot.getElementById('uploadData').addEventListener('click', () => window.uploadData(messagesElement));
+this._shadowRoot.getElementById('uploadData').addEventListener('click', () => window.uploadData(csvData, messagesElement));
 this._shadowRoot.getElementById('validateJob').addEventListener('click', () => window.validateJob(messagesElement));
 this._shadowRoot.getElementById('runJob').addEventListener('click', () => window.runJob(messagesElement));
 
