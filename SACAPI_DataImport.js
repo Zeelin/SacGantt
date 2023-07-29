@@ -24,8 +24,6 @@
             "importMethod": "Update"
         }
     };
-//  const csvData = `Version,Date,id,label,startDate,endDate,open,progress
-//public.Actual,202401,1,Task1,2023-05-05,2023-02-02,X,1000`;
 
 
     function getAccessToken(messagesElement) {
