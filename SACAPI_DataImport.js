@@ -208,7 +208,7 @@ window.uploadData = uploadData;
         jobStatusURL = data.jobStatusURL;
         console.log('Job status URL:', jobStatusURL);
        messagesElement.textContent = '';  // Clear the messages
-        messagesElement.textContent += 'Invalid rows URL: ' + invalidRowsURL + '\n';
+        messagesElement.textContent += 'Invalid rows URL: ' + jobStatusURL + '\n';
   
         // Fetch the job status
         return fetch(jobStatusURL, {
