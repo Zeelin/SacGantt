@@ -88,28 +88,32 @@ input:checked + .slider:before {
 
      <div id="image-container"> <svg width="750" height="100">  </svg></div> 
     <div id="chart"></div>
-     <a href="https://www.linkedin.com/company/planifyit" target="_blank" class="follow-link">Follow us on Linkedin - Planifyit</a>
-
-
-    <label class="switch">
-  <input type="checkbox" id="debugToggle">
-  <span class="slider round"></span>
-</label>
-<p id="debugStatus">Debugging Mode Inactive</p>
-
-    
-<div id="debugging-area" style="display: none;">
-    <h2>Debugging Mode</h2>
-    <button id="getAccessToken">Get Access Token</button>
-    <button id="getCsrfToken">Get CSRF Token</button>
-    <button id="createJob">Create Job</button>
-    <button id="uploadData">Upload Data</button>
-    <button id="validateJob">Validate Job</button>
-    <button id="runJob">Run Job</button>
-    <h3>Messages</h3>
-    <div id="messages"></div>
+ <div>    <a href="https://www.linkedin.com/company/planifyit" target="_blank" class="follow-link">Follow us on Linkedin - Planifyit</a>
 </div>
+
+  <div>
+  <label class="switch">
+    <input type="checkbox" id="debugToggle">
+    <span class="slider round"></span>
+  </label>
+  <p id="debugStatus">Debugging Mode Inactive</p>
+</div>
+
+<div id="debugging-area" style="display: none;">
+  <h2>Debugging Mode</h2>
+  <button id="getAccessToken">Get Access Token</button>
+  <button id="getCsrfToken">Get CSRF Token</button>
+  <button id="createJob">Create Job</button>
+  <button id="uploadData">Upload Data</button>
+  <button id="validateJob">Validate Job</button>
+  <button id="runJob">Run Job</button>
+  <h3>Messages</h3>
+  <div id="messages"></div>
+</div>
+
     `;
+
+
 
     
     class GanttChartWidgetAPI extends HTMLElement {
