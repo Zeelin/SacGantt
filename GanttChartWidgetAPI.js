@@ -24,6 +24,8 @@
     </style>
      <div id="image-container"> <svg width="750" height="100">  </svg></div> 
     <div id="chart"></div>
+     <a href="https://www.linkedin.com/company/planifyit" target="_blank" class="follow-link">Follow us on Linkedin - Planifyit</a>
+
     <button id="toggleDebugging">Toggle Debugging Mode</button>
 <div id="debugging-area" style="display: none;">
     <h2>Debugging Mode</h2>
@@ -36,7 +38,6 @@
     <h3>Messages</h3>
     <div id="messages"></div>
 </div>
-    <a href="https://www.linkedin.com/company/planifyit" target="_blank" class="follow-link">Follow us on Linkedin - Planifyit</a>
     `;
 
     
