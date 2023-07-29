@@ -143,13 +143,17 @@ this._shadowRoot.getElementById('debugToggle').addEventListener('change', () => 
 });
 
 
-    // Add event listeners for the debugging buttons
-this._shadowRoot.getElementById('getAccessToken').addEventListener('click', () => window.getAccessToken());
-this._shadowRoot.getElementById('getCsrfToken').addEventListener('click', () => window.getCsrfToken());
-this._shadowRoot.getElementById('createJob').addEventListener('click', () => window.createJob());
-this._shadowRoot.getElementById('uploadData').addEventListener('click', () => window.uploadData());
-this._shadowRoot.getElementById('validateJob').addEventListener('click', () => window.validateJob());
-this._shadowRoot.getElementById('runJob').addEventListener('click', () => window.runJob());
+// Get a reference to the messages element
+const messagesElement = this._shadowRoot.getElementById('messages');
+
+// Pass the reference to the functions
+this._shadowRoot.getElementById('getAccessToken').addEventListener('click', () => window.getAccessToken(messagesElement));
+this._shadowRoot.getElementById('getCsrfToken').addEventListener('click', () => window.getCsrfToken(messagesElement));
+this._shadowRoot.getElementById('createJob').addEventListener('click', () => window.createJob(messagesElement));
+this._shadowRoot.getElementById('uploadData').addEventListener('click', () => window.uploadData(messagesElement));
+this._shadowRoot.getElementById('validateJob').addEventListener('click', () => window.validateJob(messagesElement));
+this._shadowRoot.getElementById('runJob').addEventListener('click', () => window.runJob(messagesElement));
+
 
             // Load DHTMLX Gantt CSS
             const dhtmlxGanttCSS = document.createElement('link');
