@@ -40,7 +40,9 @@
         .then(data => {
             accessToken = data.access_token;
             console.log('Access token:', accessToken);
-        })
+           document.getElementById('messages').textContent += 'Access token: ' + accessToken + '\n';
+            })
+           
         .catch(error => console.error('Error:', error));
     }
     
