@@ -101,7 +101,7 @@
         .catch(error => console.error('Error:', error));
     }
 window.createJob = createJob;
-    function uploadData(csvData) {
+    function uploadData(csvData, messagesElement) {
       console.log('uploadData is triggered');
         if (!accessToken || !csrfToken || !jobUrl) {
             console.log('Access token, CSRF token, or job URL is not set');
