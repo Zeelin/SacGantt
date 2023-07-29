@@ -147,10 +147,13 @@ this._shadowRoot.getElementById('debugToggle').addEventListener('change', () => 
 const messagesElement = this._shadowRoot.getElementById('messages');
 
 // Pass the reference to the functions
+ const csvData_debugger = `Version,Date,id,label,startDate,endDate,open,progress
+public.Actual,202401,999,TaskDebugger,2023-05-05,2023-02-02,X,1`;
+            
 this._shadowRoot.getElementById('getAccessToken').addEventListener('click', () => window.getAccessToken(messagesElement));
 this._shadowRoot.getElementById('getCsrfToken').addEventListener('click', () => window.getCsrfToken(messagesElement));
 this._shadowRoot.getElementById('createJob').addEventListener('click', () => window.createJob(messagesElement));
-this._shadowRoot.getElementById('uploadData').addEventListener('click', () => window.uploadData(csvData, messagesElement));
+this._shadowRoot.getElementById('uploadData').addEventListener('click', () => window.uploadData(csvData_debugger, messagesElement));
 this._shadowRoot.getElementById('validateJob').addEventListener('click', () => window.validateJob(messagesElement));
 this._shadowRoot.getElementById('runJob').addEventListener('click', () => window.runJob(messagesElement));
 
