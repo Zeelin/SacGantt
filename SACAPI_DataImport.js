@@ -1,6 +1,6 @@
 (function () {
    
-
+//
     let accessToken, csrfToken, jobUrl, validateJobURL, runJobURL;
 //Attention!!!! modify this information, with URLs of your SAC tenant
     const csrfTokenUrl = 'https://planifyit.eu10.hcs.cloud.sap/api/v1/csrf';
